@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ouiis.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="OUIIS&#39;s NOTES">
+<meta property="og:url" content="https://ouiis.github.io/index.html">
+<meta property="og:site_name" content="OUIIS&#39;s NOTES">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="ouiis">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://ouiis.github.io/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>OUIIS's NOTES</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="OUIIS's NOTES" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">OUIIS's NOTES</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端の刃</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ouiis</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ouiis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ouiis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content index posts-expand">
+          
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/" class="post-title-link" itemprop="url">CSS 文字單位（px、em、rem…）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-08T00:00:00+08:00">2020-06-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CSS 的文字單位分為<strong>絕對單位</strong>與<strong>相對單位</strong>。絕對單位是直接指定該元素的大小；相對單位則是會視裝置大小、根元素（html）或父元素的大小而定。</p>
+<h2 id="絕對單位"><a href="#絕對單位" class="headerlink" title="絕對單位"></a>絕對單位</h2><ul>
+<li><p><strong>px</strong>：螢幕顯示的單位（pixel），組成螢幕圖像的最小單位。是最常使用的單位，瀏覽器預設的字體大小為 16px。</p>
+</li>
+<li><p><strong>pt</strong>：很少使用的單位，也是印刷的單位（point），另一種是 iOS 所定義的 pt。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/" class="post-title-link" itemprop="url">CSS 設計模式 - OOCSS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:00+08:00">2020-05-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>OOCSS</em> 是 <em>Object Oriented CSS</em> 的縮寫，由 <em>Nicole Sullivan</em> 所提出的 CSS 設計模式，而這裡指的物件是可以在網站上重複使用的 CSS 樣式。</p>
+<p><em>OOCSS</em> 有兩個大原則：</p>
+<ol>
+<li>Separate Structure and Skin（結構與樣式的分離）</li>
+<li>Separate Container and Content（容器與內容的分離）</li>
+</ol>
+<h2 id="結構與樣式的分離"><a href="#結構與樣式的分離" class="headerlink" title="結構與樣式的分離"></a>結構與樣式的分離</h2><p><strong>結構</strong>指的是無法直接用肉眼看出來的部分，例如元素被指定的大小和位置。</p>
+<ul>
+<li>Height</li>
+<li>Width</li>
+<li>Margins</li>
+<li>Padding</li>
+<li>Overflow</li>
+</ul>
+<p><strong>樣式</strong>指的是元素可見的部分，例如：</p>
+<ul>
+<li>Colors</li>
+<li>Fonts</li>
+<li>Shadows</li>
+<li>Gradients
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/" class="post-title-link" itemprop="url">CSS 設計模式 - SMACSS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">2020-05-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在小型專案裡，由於架構並不複雜，在管理上較不容易出現問題，但隨著專案的規模的成長，或者團隊人數的增加，如何讓程式碼的架構一目瞭然，方便自己或其他開發者維護專案，成為一個必須思考的課題。</p>
+<p><em>SMACSS</em> 是 <em>Scalable and Modular Architecture for CSS</em> 的縮寫，由 <em>Jonathan Snook</em> 提出的 CSS 設計方法，目的在於使 CSS 的結構具有<strong>延展性</strong>以及<strong>模組化</strong>。</p>
+<blockquote>
+<p>[<a href="http://smacss.com]">http://smacss.com]</a>(SMACSS 文件)</p>
+</blockquote>
+<h2 id="分類-CSS"><a href="#分類-CSS" class="headerlink" title="分類 CSS"></a>分類 CSS</h2><p>將 CSS 分門別類是 <em>SMACSS</em> 的核心重點，共有以下五種類別：</p>
+<ol>
+<li>Base</li>
+<li>Layout</li>
+<li>Module</li>
+<li>State</li>
+<li>Theme
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/" class="post-title-link" itemprop="url">CSS 設計模式 - BEM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-23 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-23T00:00:00+08:00">2020-05-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>BEM (Block Element Modifier)</em> 是由 <em>Yandex</em> 所提出的 CSS 設計模式，一種 CSS class 命名方式，如名稱所示，命名是由「區塊、元素、修飾符」所組成。</p>
+<blockquote>
+<p><a href="https://en.bem.info/" target="_blank" rel="noopener">BEM 文件</a></p>
+</blockquote>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><p><strong>Block</strong> 是頁面上每一個獨立的元件，以<strong>區塊功能來命名 class，不以區塊外觀命名</strong>。</p>
+<ul>
+<li>block 可獨立在頁面上任何地方，因此每個 block 都不應被位置限制住，不要在 block 寫 <code>margin</code>、<code>position</code> 等影響外部環境樣式。</li>
+<li>使用 BEM 設計模式時不應使用標籤、ID 選擇器。</li>
+<li>可以和其他 block 巢狀包覆。</li>
+</ul>
+<p><img src="https://images.bloggi.co/ecf81943.png" alt=""></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/" class="post-title-link" itemprop="url">git reset 還原到之前的版本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-14T00:00:00+08:00">2020-02-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>狀況：想將檔案還原到之前的 commit。</em></p>
+<p>回到前一次的 commit：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^</span><br><span class="line">$ git reset HEAD~</span><br></pre></td></tr></table></figure>
+
+<p>當 <code>HEAD</code> 與 <code>master</code> 都指向同一個 commit 時，可以寫成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset master^</span><br><span class="line">$ git reset master~</span><br></pre></td></tr></table></figure>
+
+<p>回到前三次的 commit：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^^^</span><br><span class="line">$ git reset HEAD^3</span><br><span class="line">$ git reset HEAD~3</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/02/13/Git-%E5%9F%BA%E7%A4%8E%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/13/Git-%E5%9F%BA%E7%A4%8E%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Git 基礎操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-02-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-13T00:00:00+08:00">2020-02-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Git 是一個「分散式版本控制軟體」，簡單說就是用於版本控制的工具，透過 Git 將每次的修改儲存成一個版本，如此可以方便了解各版本之間的差異。</p>
+<h2 id="Git-安裝與設定"><a href="#Git-安裝與設定" class="headerlink" title="Git 安裝與設定"></a>Git 安裝與設定</h2><h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><ol>
+<li>前往 <a href="https://git-scm.com/" target="_blank" rel="noopener">Git 官網</a> 找到下載 Git 按鈕進行下載。</li>
+<li>下載成功後跟著步驟即可完成安裝。</li>
+<li>安裝完成後在終端機輸入 <code>$ git version</code> 查看版本資訊。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/13/Git-%E5%9F%BA%E7%A4%8E%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/02/07/HTML5-%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/07/HTML5-%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/" class="post-title-link" itemprop="url">HTML5 語意標籤</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-02-07 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-07T00:00:00+08:00">2020-02-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="語意化元素"><a href="#語意化元素" class="headerlink" title="語意化元素"></a>語意化元素</h2><p>以往在佈局 HTML 頁面時，經常使用不具語意的 <code>&lt;div&gt;</code> 進行排版。於是 HTML5 新增了幾個語意化元素，使開發者能夠更具體的描述 HTML 內容、加強網頁的結構，並讓搜尋引擎更加了解網頁內容。</p>
+<p>以 <code>&lt;div&gt;</code> 進行佈局時，會以 class 命名各區塊，透過 class 替元素指定樣式，對於瀏覽器或搜尋引擎， class 的命名是不具有任何意思的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/07/HTML5-%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ouiis</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
