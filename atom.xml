@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ouiis.github.io/"/>
-  <updated>2020-10-30T06:30:17.970Z</updated>
+  <updated>2020-10-30T08:36:59.346Z</updated>
   <id>https://ouiis.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>JavaScript 處理字串的方法</title>
-    <link href="https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2020-10-30T05:33:24.000Z</published>
-    <updated>2020-10-30T06:30:17.970Z</updated>
+    <link href="https://ouiis.github.io/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://ouiis.github.io/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2020-10-29T05:33:24.000Z</published>
+    <updated>2020-10-30T08:36:59.346Z</updated>
     
     <content type="html"><![CDATA[<p>如何將一段字串的順序倒轉？例如： <code>hello</code> =&gt; <code>olleh</code>，除了字串方法也會使用到陣列方法 <code>reverse()</code> 和 <code>join()</code>。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure><ol><li>將字串轉成陣列</li><li>倒轉陣列</li><li>最後將陣列轉回字串</li></ol><a id="more"></a><h1 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h1><ul><li>將一個字串分割為由字串組成的陣列，以指定的界定字串（delimiter string）或正規運算式為分隔進行切割。</li><li>可以帶入第二個參數限制字數。</li></ul><p>沒有指定界定字串：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'I am the best.'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> strA = str.split();</span><br><span class="line"><span class="built_in">console</span>.log(strA);</span><br><span class="line"><span class="comment">// ['I am the best.']</span></span><br></pre></td></tr></table></figure><p>空字串：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strB = str.split(<span class="string">''</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strB);</span><br><span class="line"><span class="comment">//  ["I", " ", "a", "m", " ", "t", "h", "e", " ", "b", "e", "s", "t", "."]</span></span><br></pre></td></tr></table></figure><p>空格字串：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strC = str.split(<span class="string">' '</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strC);</span><br><span class="line"><span class="comment">// ["I", "am", "the", "best."]</span></span><br></pre></td></tr></table></figure><blockquote><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">String.prototype.split() - MDN web docs</a></p></blockquote><h1 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h1><p>參數帶入<strong>索引（index）</strong>，可以從字串擷取出指定位置上的字元。</p><h1 id="indexOf-、lastIndexOf"><a href="#indexOf-、lastIndexOf" class="headerlink" title="indexOf()、lastIndexOf()"></a>indexOf()、lastIndexOf()</h1><ul><li>在字串中搜尋指定的字元或子字串，<code>lastIndexOf()</code> 方法是反向搜尋。</li><li>陣列也有相同的方法，根據指定的值搜尋元素。</li></ul>]]></content>
     
@@ -142,9 +142,9 @@
       <category term="CSS" scheme="https://ouiis.github.io/categories/CSS/"/>
     
     
-      <category term="css" scheme="https://ouiis.github.io/tags/css/"/>
-    
       <category term="oocss" scheme="https://ouiis.github.io/tags/oocss/"/>
+    
+      <category term="css" scheme="https://ouiis.github.io/tags/css/"/>
     
   </entry>
   
@@ -213,9 +213,9 @@
       <category term="CSS" scheme="https://ouiis.github.io/categories/CSS/"/>
     
     
-      <category term="bem" scheme="https://ouiis.github.io/tags/bem/"/>
-    
       <category term="css" scheme="https://ouiis.github.io/tags/css/"/>
+    
+      <category term="bem" scheme="https://ouiis.github.io/tags/bem/"/>
     
   </entry>
   
