@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -178,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -219,6 +219,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">JavaScript 處理數字的方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-30T00:00:00+08:00">2020-10-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>JavaScript 不區別整數值（<em>integer values</em>）與浮點數值（<em>floating-point values</em>），所有數字都以浮點數值表示。可使用算術運算子（<em>arithmetic operators</em>）<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>、<code>%</code> 來處理數字，也可以透過 <code>Math</code> 物件支援更複雜的數學運算。</p>
+<h1 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h1><p>計算絕對值（<em>absolute value</em>）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &gt; 0, |x| &#x3D; x</span><br><span class="line">x &#x3D; 0, |x| &#x3D; 0</span><br><span class="line">x &lt; 0, |x| &#x3D; -x</span><br></pre></td></tr></table></figure>
+
+<h1 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil()"></a>Math.ceil()</h1><p>向上捨入（<em>round up</em>）一個數字：回傳大於或等於其數值引數的最小整數。</p>
+<h1 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor()"></a>Math.floor()</h1><p>向下捨入（<em>round down</em>）一個數字：回傳小於或等於其數值引數的最大整數。</p>
+<h1 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h1><p>捨入至最接近的整數。</p>
+<h1 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h1><p>計算一個隨機數（<em>random number</em>，或稱亂數）。</p>
+<h1 id="將數字轉型字串"><a href="#將數字轉型字串" class="headerlink" title="將數字轉型字串"></a>將數字轉型字串</h1><p>與空字串連接：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;num&#125;</span>`</span>; <span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numStr = num + <span class="string">''</span>; <span class="comment">// ES5</span></span><br></pre></td></tr></table></figure>
+
+<p>toString() 方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = num.toString();</span><br></pre></td></tr></table></figure>
+
+<h1 id="將字串轉型數字"><a href="#將字串轉型數字" class="headerlink" title="將字串轉型數字"></a>將字串轉型數字</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'字串'</span> - <span class="number">0</span></span><br><span class="line">+ <span class="string">'字串'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><p>如何反轉一個正負整數？數字不在 <em>-2,147,483,648 ~ 2,147,483,647</em> （帶正負號的 32 位元整數）範圍內要回傳 0。</p>
+<ul>
+<li>將數字轉型字串</li>
+<li>反轉字串</li>
+<li>將字串轉回數字</li>
+<li>判斷傳入的參數為正數或負數，將數字乘以 1 或 -1</li>
+<li>檢查數字的範圍</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseNumber</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> isNegative = num &lt; <span class="number">0</span> ? <span class="number">-1</span> : <span class="number">1</span>; <span class="comment">// 判斷參數是否為負數</span></span><br><span class="line">  <span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;<span class="built_in">Math</span>.abs(num)&#125;</span>`</span>; <span class="comment">// 將數字轉成正整數，再轉成字串</span></span><br><span class="line">  <span class="keyword">let</span> reverseNumStr = numStr.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">let</span> reverseInteger = (+ reverseNumStr) * isNegative</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (reverseInteger &gt; <span class="number">2147483647</span> || reverseInteger &lt; <span class="number">-2147483648</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> reverseInteger</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>參考：<br><a href="https://youtu.be/3vvxRpyp0CE" target="_blank" rel="noopener">Leetcode 演算超入門</a><br><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">Reverse Integer - LeetCode</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -243,7 +338,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-10-29 13:33:24" itemprop="dateCreated datePublished" datetime="2020-10-29T13:33:24+08:00">2020-10-29</time>
+              <time title="創建時間：2020-10-29 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-29T00:00:00+08:00">2020-10-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
