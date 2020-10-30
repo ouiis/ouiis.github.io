@@ -210,85 +210,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/30/Vue-js-Slot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ouiis">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="OUIIS's NOTES">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/30/Vue-js-Slot/" class="post-title-link" itemprop="url">Vue.js Slot</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-10-30 13:33:47" itemprop="dateCreated datePublished" datetime="2020-10-30T13:33:47+08:00">2020-10-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在 2.6.0 中新增了 <code>v-slot</code> 指令，取代了 <code>slot</code> 和 <code>slot-scope</code>。</p>
-<h1 id="Slot-Content"><a href="#Slot-Content" class="headerlink" title="Slot Content"></a>Slot Content</h1><ul>
-<li>在元件 <code>template</code> 裡面新增 <code>&lt;slot&gt;</code> 元素 ，便可在使用該元件時任意新增<strong>文字、HTML 或其他元件等內容</strong>在插槽的位置。</li>
-<li>若 <code>template</code> 裡沒有 <code>&lt;slot&gt;</code> 元素，則在裡面新增的內容都會被忽略。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-bind:href</span>=<span class="string">"url"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation-link</span> <span class="attr">url</span>=<span class="string">"/profile"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-user"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Compilation-Scope"><a href="#Compilation-Scope" class="headerlink" title="Compilation Scope"></a>Compilation Scope</h1><p>父元件裡的內容都是在父級作用域中編譯的；子元件裡的所有內容都是在子作用域中編譯的。</p>
-<h1 id="Fallback-Content"><a href="#Fallback-Content" class="headerlink" title="Fallback Content"></a>Fallback Content</h1><p>可是先定義插槽的預設內容。</p>
-<h1 id="Named-Slots-具名插槽"><a href="#Named-Slots-具名插槽" class="headerlink" title="Named Slots 具名插槽"></a>Named Slots 具名插槽</h1><p><code>&lt;slot&gt;</code> 可以使用 <code>name</code> 屬性定義額外的插槽。沒有指定名稱的插槽預設名稱為 <code>default</code>。</p>
-<p>在 <code>&lt;template&gt;</code> 元素上使用 <code>v-slot</code> directive，並透過參數傳入名稱。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,6 +286,85 @@
 <li>在字串中搜尋指定的字元或子字串，<code>lastIndexOf()</code> 方法是反向搜尋。</li>
 <li>陣列也有相同的方法，根據指定的值搜尋元素。</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/09/01/Vue-js-Slot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OUIIS's NOTES">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/Vue-js-Slot/" class="post-title-link" itemprop="url">Vue.js Slot</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-01T00:00:00+08:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在 2.6.0 中新增了 <code>v-slot</code> 指令，取代了 <code>slot</code> 和 <code>slot-scope</code>。</p>
+<h1 id="Slot-Content"><a href="#Slot-Content" class="headerlink" title="Slot Content"></a>Slot Content</h1><ul>
+<li>在元件 <code>template</code> 裡面新增 <code>&lt;slot&gt;</code> 元素 ，便可在使用該元件時任意新增<strong>文字、HTML 或其他元件等內容</strong>在插槽的位置。</li>
+<li>若 <code>template</code> 裡沒有 <code>&lt;slot&gt;</code> 元素，則在裡面新增的內容都會被忽略。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-bind:href</span>=<span class="string">"url"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation-link</span> <span class="attr">url</span>=<span class="string">"/profile"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-user"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Compilation-Scope"><a href="#Compilation-Scope" class="headerlink" title="Compilation Scope"></a>Compilation Scope</h1><p>父元件裡的內容都是在父級作用域中編譯的；子元件裡的所有內容都是在子作用域中編譯的。</p>
+<h1 id="Fallback-Content"><a href="#Fallback-Content" class="headerlink" title="Fallback Content"></a>Fallback Content</h1><p>可是先定義插槽的預設內容。</p>
+<h1 id="Named-Slots-具名插槽"><a href="#Named-Slots-具名插槽" class="headerlink" title="Named Slots 具名插槽"></a>Named Slots 具名插槽</h1><p><code>&lt;slot&gt;</code> 可以使用 <code>name</code> 屬性定義額外的插槽。沒有指定名稱的插槽預設名稱為 <code>default</code>。</p>
+<p>在 <code>&lt;template&gt;</code> 元素上使用 <code>v-slot</code> directive，並透過參數傳入名稱。</p>
 
       
     </div>
