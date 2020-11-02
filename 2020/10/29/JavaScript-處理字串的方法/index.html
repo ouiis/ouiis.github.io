@@ -26,11 +26,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 處理字串的方法">
 <meta property="og:url" content="https://ouiis.github.io/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
-<meta property="og:site_name" content="OUIIS&#39;s NOTES">
+<meta property="og:site_name" content="前端의刃 | J&#39;s Notes">
 <meta property="og:description" content="如何將一段字串的順序倒轉？例如： hello &#x3D;&gt; olleh，除了字串方法也會使用到陣列方法 reverse() 和 join()。 1str.split(&#39;&#39;).reverse().join(&#39;&#39;);   將字串轉成陣列 倒轉陣列 最後將陣列轉回字串">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-10-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-30T09:28:53.997Z">
+<meta property="article:modified_time" content="2020-11-02T06:09:15.238Z">
 <meta property="article:author" content="ouiis">
 <meta property="article:tag" content="string">
 <meta property="article:tag" content="javascript">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>JavaScript 處理字串的方法 | OUIIS's NOTES</title>
+  <title>JavaScript 處理字串的方法 | 前端의刃 | J's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KJHHEXHV"></script>
     <script>
@@ -101,7 +101,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="OUIIS's NOTES" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="前端의刃 | J's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -120,10 +120,10 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">OUIIS's NOTES</h1>
+      <h1 class="site-title">前端의刃 | J's Notes</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">前端の刃</p>
+      <p class="site-subtitle" itemprop="description">#Front-end</p>
   </div>
 
   <div class="site-nav-right">
@@ -161,7 +161,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#split"><span class="nav-number">1.</span> <span class="nav-text">split()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#charAt"><span class="nav-number">2.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#indexOf-、lastIndexOf"><span class="nav-number">3.</span> <span class="nav-text">indexOf()、lastIndexOf()</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#陣列方法"><span class="nav-number">1.</span> <span class="nav-text">陣列方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse"><span class="nav-number">1.1.</span> <span class="nav-text">reverse()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join"><span class="nav-number">1.2.</span> <span class="nav-text">join()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字串方法"><span class="nav-number">2.</span> <span class="nav-text">字串方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#split"><span class="nav-number">2.1.</span> <span class="nav-text">split()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt"><span class="nav-number">2.2.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-、lastIndexOf"><span class="nav-number">2.3.</span> <span class="nav-text">indexOf()、lastIndexOf()</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -174,7 +174,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -185,7 +185,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -236,7 +236,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="OUIIS's NOTES">
+      <meta itemprop="name" content="前端의刃 | J's Notes">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -282,8 +282,21 @@
 <li>最後將陣列轉回字串</li>
 </ol>
 <a id="more"></a>
-<h1 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h1><ul>
-<li>將一個字串分割為由字串組成的陣列，以指定的界定字串（delimiter string）或正規運算式為分隔進行切割。</li>
+
+<h2 id="陣列方法"><a href="#陣列方法" class="headerlink" title="陣列方法"></a>陣列方法</h2><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><ul>
+<li>反轉陣列元素的順序，回傳反轉後的陣列。</li>
+<li>在原陣列（<em>in place</em>）進行反轉，不會建立新的陣列。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.reverse().join(); <span class="comment">// =&gt; '3, 2, 1'，但 a 已被修改為 [3, 2, 1]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><ul>
+<li>將陣列的所有元素轉成字串並串接起來，回傳字串結果。</li>
+<li>可以指定額外的字串用以分隔結果中的元素，預設使用逗號（<em>comma</em>）。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.join(); <span class="comment">// '1, 2, 3'</span></span><br><span class="line">a.join(<span class="string">''</span>); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字串方法"><a href="#字串方法" class="headerlink" title="字串方法"></a>字串方法</h2><h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3><ul>
+<li>將一個字串分割為由字串組成的陣列，以指定的界定字串（<em>delimiter string</em>）或正規運算式為分隔進行切割。</li>
 <li>可以帶入第二個參數限制字數。</li>
 </ul>
 <p>沒有指定界定字串：</p>
@@ -298,11 +311,14 @@
 <blockquote>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">String.prototype.split() - MDN web docs</a></p>
 </blockquote>
-<h1 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h1><p>參數帶入<strong>索引（index）</strong>，可以從字串擷取出指定位置上的字元。</p>
-<h1 id="indexOf-、lastIndexOf"><a href="#indexOf-、lastIndexOf" class="headerlink" title="indexOf()、lastIndexOf()"></a>indexOf()、lastIndexOf()</h1><ul>
+<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p>參數帶入<strong>索引（index）</strong>，可以從字串擷取出指定位置上的字元。</p>
+<h3 id="indexOf-、lastIndexOf"><a href="#indexOf-、lastIndexOf" class="headerlink" title="indexOf()、lastIndexOf()"></a>indexOf()、lastIndexOf()</h3><ul>
 <li>在字串中搜尋指定的字元或子字串，<code>lastIndexOf()</code> 方法是反向搜尋。</li>
 <li>陣列也有相同的方法，根據指定的值搜尋元素。</li>
 </ul>
+<blockquote>
+<p>參考：<br><a href="https://youtu.be/3vvxRpyp0CE" target="_blank" rel="noopener">Leetcode 演算超入門</a></p>
+</blockquote>
 
     </div>
 
