@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ouiis.github.io/"/>
-  <updated>2020-11-02T09:34:11.876Z</updated>
+  <updated>2020-11-10T14:51:30.793Z</updated>
   <id>https://ouiis.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>認識 JavaScript 的 Map</title>
+    <link href="https://ouiis.github.io/2020/11/06/JavaScript-Map/"/>
+    <id>https://ouiis.github.io/2020/11/06/JavaScript-Map/</id>
+    <published>2020-11-05T16:00:00.000Z</published>
+    <updated>2020-11-10T14:51:30.793Z</updated>
+    
+    <content type="html"><![CDATA[<p>JavaScript 除了在陣列有個 <code>map()</code> 方法，還有另外一個跟物件很像的 <code>Map</code>，和物件同樣是由 <code>Key/Value</code> 組成。</p><a id="more"></a><h2 id="Map-與物件的比較"><a href="#Map-與物件的比較" class="headerlink" title="Map 與物件的比較"></a>Map 與物件的比較</h2><ul><li>物件的 Key 型別為<strong>字串</strong>或 <strong>Symbol</strong>。</li><li>Map 可以使用任何值作為 Key，例如：函式、物件等。</li><li>Map 可以使用 <code>size</code> 屬性獲得 Map 的大小。</li><li>Map 可以直接使用迴圈，而物件要使用迴圈必須使用其他方法。</li><li>當需要頻繁增減 Key/Value 時，Map 效能比物件好。</li></ul><blockquote><p>參考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="noopener">Map - JavaScript | MDN</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScript 除了在陣列有個 &lt;code&gt;map()&lt;/code&gt; 方法，還有另外一個跟物件很像的 &lt;code&gt;Map&lt;/code&gt;，和物件同樣是由 &lt;code&gt;Key/Value&lt;/code&gt; 組成。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://ouiis.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="map" scheme="https://ouiis.github.io/tags/map/"/>
+    
+      <category term="javascript" scheme="https://ouiis.github.io/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 處理字串的方法（二）</title>
@@ -35,11 +60,11 @@
       <category term="JavaScript" scheme="https://ouiis.github.io/categories/JavaScript/"/>
     
     
+      <category term="javascript" scheme="https://ouiis.github.io/tags/javascript/"/>
+    
       <category term="string" scheme="https://ouiis.github.io/tags/string/"/>
     
       <category term="unicode" scheme="https://ouiis.github.io/tags/unicode/"/>
-    
-      <category term="javascript" scheme="https://ouiis.github.io/tags/javascript/"/>
     
   </entry>
   
@@ -48,7 +73,7 @@
     <link href="https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/</id>
     <published>2020-10-29T16:00:00.000Z</published>
-    <updated>2020-11-02T06:16:00.413Z</updated>
+    <updated>2020-11-06T09:29:16.071Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript 不區別整數值（<em>integer values</em>）與浮點數值（<em>floating-point values</em>），所有數字都以浮點數值表示。可使用算術運算子（<em>arithmetic operators</em>）<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>、<code>%</code> 來處理數字，也可以透過 <code>Math</code> 物件支援更複雜的數學運算。</p><h1 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h1><p>計算絕對值（<em>absolute value</em>）。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &gt; 0, |x| &#x3D; x</span><br><span class="line">x &#x3D; 0, |x| &#x3D; 0</span><br><span class="line">x &lt; 0, |x| &#x3D; -x</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil()"></a>Math.ceil()</h1><p>向上捨入（<em>round up</em>）一個數字：回傳大於或等於其數值引數的最小整數。</p><h1 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor()"></a>Math.floor()</h1><p>向下捨入（<em>round down</em>）一個數字：回傳小於或等於其數值引數的最大整數。</p><h1 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h1><p>捨入至最接近的整數。</p><h1 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h1><p>計算一個隨機數（<em>random number</em>，或稱亂數）。</p><h1 id="將數字轉型字串"><a href="#將數字轉型字串" class="headerlink" title="將數字轉型字串"></a>將數字轉型字串</h1><p>與空字串連接：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;num&#125;</span>`</span>; <span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numStr = num + <span class="string">''</span>; <span class="comment">// ES5</span></span><br></pre></td></tr></table></figure><p>toString() 方法：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = num.toString();</span><br></pre></td></tr></table></figure><h1 id="將字串轉型數字"><a href="#將字串轉型數字" class="headerlink" title="將字串轉型數字"></a>將字串轉型數字</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'字串'</span> - <span class="number">0</span></span><br><span class="line">+ <span class="string">'字串'</span></span><br></pre></td></tr></table></figure><h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><p>如何反轉一個正負整數？數字不在 <em>-2,147,483,648 ~ 2,147,483,647</em> （帶正負號的 32 位元整數）範圍內要回傳 0。</p><ul><li>將數字轉型字串</li><li>反轉字串</li><li>將字串轉回數字</li><li>判斷傳入的參數為正數或負數，將數字乘以 1 或 -1</li><li>檢查數字的範圍</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseNumber</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> isNegative = num &lt; <span class="number">0</span> ? <span class="number">-1</span> : <span class="number">1</span>; <span class="comment">// 判斷參數是否為負數</span></span><br><span class="line">  <span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;<span class="built_in">Math</span>.abs(num)&#125;</span>`</span>; <span class="comment">// 將數字轉成正整數，再轉成字串</span></span><br><span class="line">  <span class="keyword">let</span> reverseNumStr = numStr.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">let</span> reverseInteger = (+ reverseNumStr) * isNegative</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (reverseInteger &gt; <span class="number">2147483647</span> || reverseInteger &lt; <span class="number">-2147483648</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> reverseInteger</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>參考：<br><a href="https://youtu.be/3vvxRpyp0CE" target="_blank" rel="noopener">Leetcode 演算超入門</a><br><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">Reverse Integer - LeetCode</a></p></blockquote>]]></content>
     
@@ -98,9 +123,9 @@
       <category term="JavaScript" scheme="https://ouiis.github.io/categories/JavaScript/"/>
     
     
-      <category term="string" scheme="https://ouiis.github.io/tags/string/"/>
-    
       <category term="javascript" scheme="https://ouiis.github.io/tags/javascript/"/>
+    
+      <category term="string" scheme="https://ouiis.github.io/tags/string/"/>
     
   </entry>
   
