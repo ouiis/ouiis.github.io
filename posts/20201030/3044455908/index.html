@@ -22,21 +22,22 @@
     var CONFIG = {"hostname":"ouiis.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="OOCSS 是 Object Oriented CSS 的縮寫，由 Nicole Sullivan 所提出的 CSS 設計模式，而這裡指的物件是可以在網站上重複使用的 CSS 樣式。">
+  <meta name="description" content="JavaScript 不區別整數值（integer values）與浮點數值（floating-point values），所有數字都以浮點數值表示。可使用算術運算子（arithmetic operators）+、-、*、&#x2F;、% 來處理數字，也可以透過 Math 物件支援更複雜的數學運算。 Math.abs()計算絕對值（absolute value）。 123x &gt; 0, |x| &amp;#x3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 設計模式 - OOCSS">
-<meta property="og:url" content="https://ouiis.github.io/posts/20200528/3863821502">
+<meta property="og:title" content="JavaScript 處理數字的方法">
+<meta property="og:url" content="https://ouiis.github.io/posts/20201030/3044455908/index.html">
 <meta property="og:site_name" content="前端의刃 | J&#39;s Notes">
-<meta property="og:description" content="OOCSS 是 Object Oriented CSS 的縮寫，由 Nicole Sullivan 所提出的 CSS 設計模式，而這裡指的物件是可以在網站上重複使用的 CSS 樣式。">
+<meta property="og:description" content="JavaScript 不區別整數值（integer values）與浮點數值（floating-point values），所有數字都以浮點數值表示。可使用算術運算子（arithmetic operators）+、-、*、&#x2F;、% 來處理數字，也可以透過 Math 物件支援更複雜的數學運算。 Math.abs()計算絕對值（absolute value）。 123x &gt; 0, |x| &amp;#x3">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-05-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-03T07:33:13.006Z">
+<meta property="article:published_time" content="2020-10-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-03T07:33:13.021Z">
 <meta property="article:author" content="ouiis">
-<meta property="article:tag" content="css">
-<meta property="article:tag" content="oocss">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="number">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ouiis.github.io/posts/20200528/3863821502">
+<link rel="canonical" href="https://ouiis.github.io/posts/20201030/3044455908/">
 
 
 <script class="page-configurations">
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title>CSS 設計模式 - OOCSS | 前端의刃 | J's Notes</title>
+  <title>JavaScript 處理數字的方法 | 前端의刃 | J's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KJHHEXHV"></script>
     <script>
@@ -161,7 +162,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#結構與樣式的分離"><span class="nav-number">1.</span> <span class="nav-text">結構與樣式的分離</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器與內容的分離"><span class="nav-number">2.</span> <span class="nav-text">容器與內容的分離</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Math-abs"><span class="nav-number">1.</span> <span class="nav-text">Math.abs()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math-ceil"><span class="nav-number">2.</span> <span class="nav-text">Math.ceil()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math-floor"><span class="nav-number">3.</span> <span class="nav-text">Math.floor()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math-round"><span class="nav-number">4.</span> <span class="nav-text">Math.round()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math-random"><span class="nav-number">5.</span> <span class="nav-text">Math.random()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將數字轉型字串"><span class="nav-number">6.</span> <span class="nav-text">將數字轉型字串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將字串轉型數字"><span class="nav-number">7.</span> <span class="nav-text">將字串轉型數字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#題目"><span class="nav-number">8.</span> <span class="nav-text">題目</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -227,7 +228,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200528/3863821502">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201030/3044455908/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -240,7 +241,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CSS 設計模式 - OOCSS
+          JavaScript 處理數字的方法
         </h1>
 
         <div class="post-meta">
@@ -250,7 +251,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-05-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:00+08:00">2020-05-28</time>
+              <time title="創建時間：2020-10-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-30T00:00:00+08:00">2020-10-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +259,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
                 </span>
             </span>
 
@@ -273,35 +274,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><em>OOCSS</em> 是 <em>Object Oriented CSS</em> 的縮寫，由 <em>Nicole Sullivan</em> 所提出的 CSS 設計模式，而這裡指的物件是可以在網站上重複使用的 CSS 樣式。</p>
+        <p>JavaScript 不區別整數值（<em>integer values</em>）與浮點數值（<em>floating-point values</em>），所有數字都以浮點數值表示。可使用算術運算子（<em>arithmetic operators</em>）<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>、<code>%</code> 來處理數字，也可以透過 <code>Math</code> 物件支援更複雜的數學運算。</p>
+<h1 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h1><p>計算絕對值（<em>absolute value</em>）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &gt; 0, |x| &#x3D; x</span><br><span class="line">x &#x3D; 0, |x| &#x3D; 0</span><br><span class="line">x &lt; 0, |x| &#x3D; -x</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
-<p><em>OOCSS</em> 有兩個大原則：</p>
-<ol>
-<li>Separate Structure and Skin（結構與樣式的分離）</li>
-<li>Separate Container and Content（容器與內容的分離）</li>
-</ol>
-<h2 id="結構與樣式的分離"><a href="#結構與樣式的分離" class="headerlink" title="結構與樣式的分離"></a>結構與樣式的分離</h2><p><strong>結構</strong>指的是無法直接用肉眼看出來的部分，例如元素被指定的大小和位置。</p>
+<h1 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil()"></a>Math.ceil()</h1><p>向上捨入（<em>round up</em>）一個數字：回傳大於或等於其數值引數的最小整數。</p>
+<h1 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor()"></a>Math.floor()</h1><p>向下捨入（<em>round down</em>）一個數字：回傳小於或等於其數值引數的最大整數。</p>
+<h1 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h1><p>捨入至最接近的整數。</p>
+<h1 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h1><p>計算一個隨機數（<em>random number</em>，或稱亂數）。</p>
+<h1 id="將數字轉型字串"><a href="#將數字轉型字串" class="headerlink" title="將數字轉型字串"></a>將數字轉型字串</h1><p>與空字串連接：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;num&#125;</span>`</span>; <span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> numStr = num + <span class="string">''</span>; <span class="comment">// ES5</span></span><br></pre></td></tr></table></figure>
+
+<p>toString() 方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = num.toString();</span><br></pre></td></tr></table></figure>
+
+<h1 id="將字串轉型數字"><a href="#將字串轉型數字" class="headerlink" title="將字串轉型數字"></a>將字串轉型數字</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'字串'</span> - <span class="number">0</span></span><br><span class="line">+ <span class="string">'字串'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><p>如何反轉一個正負整數？數字不在 <em>-2,147,483,648 ~ 2,147,483,647</em> （帶正負號的 32 位元整數）範圍內要回傳 0。</p>
 <ul>
-<li>Height</li>
-<li>Width</li>
-<li>Margins</li>
-<li>Padding</li>
-<li>Overflow</li>
+<li>將數字轉型字串</li>
+<li>反轉字串</li>
+<li>將字串轉回數字</li>
+<li>判斷傳入的參數為正數或負數，將數字乘以 1 或 -1</li>
+<li>檢查數字的範圍</li>
 </ul>
-<p><strong>樣式</strong>指的是元素可見的部分，例如：</p>
-<ul>
-<li>Colors</li>
-<li>Fonts</li>
-<li>Shadows</li>
-<li>Gradients</li>
-</ul>
-<h2 id="容器與內容的分離"><a href="#容器與內容的分離" class="headerlink" title="容器與內容的分離"></a>容器與內容的分離</h2><p><strong>內容</strong>指的是位於其他元素之內的文字段落、圖片等，容器與內容的分離代表<strong>無論內容位在何處，都不會影響其樣式</strong>，而容器也可以以結構來表示。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseNumber</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> isNegative = num &lt; <span class="number">0</span> ? <span class="number">-1</span> : <span class="number">1</span>; <span class="comment">// 判斷參數是否為負數</span></span><br><span class="line">  <span class="keyword">let</span> numStr = <span class="string">`<span class="subst">$&#123;<span class="built_in">Math</span>.abs(num)&#125;</span>`</span>; <span class="comment">// 將數字轉成正整數，再轉成字串</span></span><br><span class="line">  <span class="keyword">let</span> reverseNumStr = numStr.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">let</span> reverseInteger = (+ reverseNumStr) * isNegative</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (reverseInteger &gt; <span class="number">2147483647</span> || reverseInteger &lt; <span class="number">-2147483648</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> reverseInteger</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>參考資料</strong>：</p>
 <ul>
-<li><em><a href="https://github.com/stubbornella/oocss/wiki" target="_blank" rel="noopener">OOCSS - GitHub</a></em></li>
-<li><em><a href="">OOCSS - The Future of Writing CSS</a></em></li>
+<li><em><a href="https://youtu.be/3vvxRpyp0CE" target="_blank" rel="noopener">Leetcode 演算超入門</a></em></li>
+<li><em><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">Reverse Integer - LeetCode</a></em></li>
 </ul>
 </blockquote>
 
@@ -313,8 +317,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/css/" rel="tag"># css</a>
-              <a href="/tags/oocss/" rel="tag"># oocss</a>
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/number/" rel="tag"># number</a>
+              <a href="/tags/math/" rel="tag"># math</a>
           </div>
 
         
@@ -323,12 +328,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/20200527/3030697487" rel="prev" title="CSS 設計模式 - SMACSS">
-      <i class="fa fa-chevron-left"></i> CSS 設計模式 - SMACSS
+    <a href="/posts/20201029/1174075309/" rel="prev" title="JavaScript 處理字串的方法">
+      <i class="fa fa-chevron-left"></i> JavaScript 處理字串的方法
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/20200608/1227210383" rel="next" title="CSS 文字單位（px、em、rem…）">
-      CSS 文字單位（px、em、rem…） <i class="fa fa-chevron-right"></i>
+    <a href="/posts/20201102/1216329286/" rel="next" title="JavaScript 處理字串的方法（二）">
+      JavaScript 處理字串的方法（二） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

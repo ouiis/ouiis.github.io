@@ -22,21 +22,22 @@
     var CONFIG = {"hostname":"ouiis.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="在 2.6.0 中新增了 v-slot 指令，取代了 slot 和 slot-scope。 Slot Content 在元件 template 裡面新增 &lt;slot&gt; 元素 ，便可在使用該元件時任意新增文字、HTML 或其他元件等內容在插槽的位置。 若 template 裡沒有 &lt;slot&gt; 元素，則在裡面新增的內容都會被忽略。">
+  <meta name="description" content="Chart.js 是一套可透過 JavaScript 繪製圖表的工具，本篇將紀錄在 Vue.js 專案中使用 Chart.js 的實作過程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.js Slot">
-<meta property="og:url" content="https://ouiis.github.io/posts/20200901/1596804957">
+<meta property="og:title" content="在 Vue.js 專案中使用 vue-chartjs 繪製圖表">
+<meta property="og:url" content="https://ouiis.github.io/posts/20201113/1757833723/index.html">
 <meta property="og:site_name" content="前端의刃 | J&#39;s Notes">
-<meta property="og:description" content="在 2.6.0 中新增了 v-slot 指令，取代了 slot 和 slot-scope。 Slot Content 在元件 template 裡面新增 &lt;slot&gt; 元素 ，便可在使用該元件時任意新增文字、HTML 或其他元件等內容在插槽的位置。 若 template 裡沒有 &lt;slot&gt; 元素，則在裡面新增的內容都會被忽略。">
+<meta property="og:description" content="Chart.js 是一套可透過 JavaScript 繪製圖表的工具，本篇將紀錄在 Vue.js 專案中使用 Chart.js 的實作過程。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-08-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-03T07:33:13.018Z">
+<meta property="article:published_time" content="2020-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-03T07:33:12.997Z">
 <meta property="article:author" content="ouiis">
-<meta property="article:tag" content="slot">
+<meta property="article:tag" content="chart.js">
+<meta property="article:tag" content="vue-chartjs">
 <meta property="article:tag" content="vue.js">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ouiis.github.io/posts/20200901/1596804957">
+<link rel="canonical" href="https://ouiis.github.io/posts/20201113/1757833723/">
 
 
 <script class="page-configurations">
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title>Vue.js Slot | 前端의刃 | J's Notes</title>
+  <title>在 Vue.js 專案中使用 vue-chartjs 繪製圖表 | 前端의刃 | J's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KJHHEXHV"></script>
     <script>
@@ -149,7 +150,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -161,7 +162,6 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Slot-Content"><span class="nav-number">1.</span> <span class="nav-text">Slot Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compilation-Scope"><span class="nav-number">2.</span> <span class="nav-text">Compilation Scope</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fallback-Content"><span class="nav-number">3.</span> <span class="nav-text">Fallback Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Named-Slots-具名插槽"><span class="nav-number">4.</span> <span class="nav-text">Named Slots 具名插槽</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200901/1596804957">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201113/1757833723/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -240,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vue.js Slot
+          在 Vue.js 專案中使用 vue-chartjs 繪製圖表
         </h1>
 
         <div class="post-meta">
@@ -250,7 +250,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-01T00:00:00+08:00">2020-09-01</time>
+              <time title="創建時間：2020-11-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-13T00:00:00+08:00">2020-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,6 +263,7 @@
             </span>
 
           
+            <div class="post-description">Chart.js 是一套可透過 JavaScript 繪製圖表的工具，本篇將紀錄在 Vue.js 專案中使用 Chart.js 的實作過程。</div>
 
         </div>
       </header>
@@ -273,21 +274,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在 2.6.0 中新增了 <code>v-slot</code> 指令，取代了 <code>slot</code> 和 <code>slot-scope</code>。</p>
-<h1 id="Slot-Content"><a href="#Slot-Content" class="headerlink" title="Slot Content"></a>Slot Content</h1><ul>
-<li>在元件 <code>template</code> 裡面新增 <code>&lt;slot&gt;</code> 元素 ，便可在使用該元件時任意新增<strong>文字、HTML 或其他元件等內容</strong>在插槽的位置。</li>
-<li>若 <code>template</code> 裡沒有 <code>&lt;slot&gt;</code> 元素，則在裡面新增的內容都會被忽略。</li>
+        <p><strong>vue-chartjs</strong> 是封裝過的 Chart.js，使 Chart.js 以元件的方式運用在 Vue 專案中。</p>
+<p>首先進行安裝：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install vue-chartjs chart.js --save</span><br></pre></td></tr></table></figure>
+
+<p>每一種圖表類型都是一個 Vue 元件，新增一個 <code>Chart.vue</code> 管理 <code>vue-chartjs</code> 所提供的元件。</p>
+<blockquote>
+<p><strong>參考資料</strong>：</p>
+<ul>
+<li><em><a href="https://www.chartjs.org/" target="_blank" rel="noopener">Chart.js</a></em></li>
+<li><em><a href="https://vue-chartjs.org/" target="_blank" rel="noopener">vue-chartjs</a></em></li>
 </ul>
-<a id="more"></a>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-bind:href</span>=<span class="string">"url"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation-link</span> <span class="attr">url</span>=<span class="string">"/profile"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-user"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Compilation-Scope"><a href="#Compilation-Scope" class="headerlink" title="Compilation Scope"></a>Compilation Scope</h1><p>父元件裡的內容都是在父級作用域中編譯的；子元件裡的所有內容都是在子作用域中編譯的。</p>
-<h1 id="Fallback-Content"><a href="#Fallback-Content" class="headerlink" title="Fallback Content"></a>Fallback Content</h1><p>可是先定義插槽的預設內容。</p>
-<h1 id="Named-Slots-具名插槽"><a href="#Named-Slots-具名插槽" class="headerlink" title="Named Slots 具名插槽"></a>Named Slots 具名插槽</h1><p><code>&lt;slot&gt;</code> 可以使用 <code>name</code> 屬性定義額外的插槽。沒有指定名稱的插槽預設名稱為 <code>default</code>。</p>
-<p>在 <code>&lt;template&gt;</code> 元素上使用 <code>v-slot</code> directive，並透過參數傳入名稱。</p>
+</blockquote>
 
     </div>
 
@@ -297,7 +295,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/slot/" rel="tag"># slot</a>
+              <a href="/tags/chart-js/" rel="tag"># chart.js</a>
+              <a href="/tags/vue-chartjs/" rel="tag"># vue-chartjs</a>
               <a href="/tags/vue-js/" rel="tag"># vue.js</a>
           </div>
 
@@ -307,12 +306,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/20200608/1227210383" rel="prev" title="CSS 文字單位（px、em、rem…）">
-      <i class="fa fa-chevron-left"></i> CSS 文字單位（px、em、rem…）
+    <a href="/posts/20201106/2327233944/" rel="prev" title="認識 JavaScript 的 Map">
+      <i class="fa fa-chevron-left"></i> 認識 JavaScript 的 Map
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/20201029/1174075309" rel="next" title="JavaScript 處理字串的方法">
-      JavaScript 處理字串的方法 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/20201117/1972913936/" rel="next" title="JavaScript 日期與時間 - Date 物件">
+      JavaScript 日期與時間 - Date 物件 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

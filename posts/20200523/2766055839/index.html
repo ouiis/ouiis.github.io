@@ -22,20 +22,25 @@
     var CONFIG = {"hostname":"ouiis.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="CSS 的文字單位分為絕對單位與相對單位。絕對單位是直接指定該元素的大小；相對單位則是會視裝置大小、根元素（html）或父元素的大小而定。 絕對單位 px：螢幕顯示的單位（pixel），組成螢幕圖像的最小單位。是最常使用的單位，瀏覽器預設的字體大小為 16px。  pt：很少使用的單位，也是印刷的單位（point），另一種是 iOS 所定義的 pt。">
+  <meta name="description" content="BEM (Block Element Modifier) 是由 Yandex 所提出的 CSS 設計模式，一種 CSS class 命名方式，如名稱所示，命名是由「區塊、元素、修飾符」所組成。  BEM 文件  BlockBlock 是頁面上每一個獨立的元件，以區塊功能來命名 class，不以區塊外觀命名。  block 可獨立在頁面上任何地方，因此每個 block 都不應被位置限制住，不要在 b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 文字單位（px、em、rem…）">
-<meta property="og:url" content="https://ouiis.github.io/posts/20200608/1227210383">
+<meta property="og:title" content="CSS 設計模式 - BEM">
+<meta property="og:url" content="https://ouiis.github.io/posts/20200523/2766055839/index.html">
 <meta property="og:site_name" content="前端의刃 | J&#39;s Notes">
-<meta property="og:description" content="CSS 的文字單位分為絕對單位與相對單位。絕對單位是直接指定該元素的大小；相對單位則是會視裝置大小、根元素（html）或父元素的大小而定。 絕對單位 px：螢幕顯示的單位（pixel），組成螢幕圖像的最小單位。是最常使用的單位，瀏覽器預設的字體大小為 16px。  pt：很少使用的單位，也是印刷的單位（point），另一種是 iOS 所定義的 pt。">
+<meta property="og:description" content="BEM (Block Element Modifier) 是由 Yandex 所提出的 CSS 設計模式，一種 CSS class 命名方式，如名稱所示，命名是由「區塊、元素、修飾符」所組成。  BEM 文件  BlockBlock 是頁面上每一個獨立的元件，以區塊功能來命名 class，不以區塊外觀命名。  block 可獨立在頁面上任何地方，因此每個 block 都不應被位置限制住，不要在 b">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-06-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-03T07:33:12.989Z">
+<meta property="og:image" content="https://images.bloggi.co/ecf81943.png">
+<meta property="og:image" content="https://images.bloggi.co/05b63f23.png">
+<meta property="og:image" content="https://images.bloggi.co/36ca1e28.png">
+<meta property="article:published_time" content="2020-05-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-03T07:33:12.999Z">
 <meta property="article:author" content="ouiis">
-<meta property="article:tag" content="font">
+<meta property="article:tag" content="bem">
+<meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.bloggi.co/ecf81943.png">
 
-<link rel="canonical" href="https://ouiis.github.io/posts/20200608/1227210383">
+<link rel="canonical" href="https://ouiis.github.io/posts/20200523/2766055839/">
 
 
 <script class="page-configurations">
@@ -48,7 +53,7 @@
   };
 </script>
 
-  <title>CSS 文字單位（px、em、rem…） | 前端의刃 | J's Notes</title>
+  <title>CSS 設計模式 - BEM | 前端의刃 | J's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KJHHEXHV"></script>
     <script>
@@ -160,7 +165,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#絕對單位"><span class="nav-number">1.</span> <span class="nav-text">絕對單位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相對單位"><span class="nav-number">2.</span> <span class="nav-text">相對單位</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block"><span class="nav-number">1.</span> <span class="nav-text">Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element"><span class="nav-number">2.</span> <span class="nav-text">Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modifier"><span class="nav-number">3.</span> <span class="nav-text">Modifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BEM-的命名規則"><span class="nav-number">4.</span> <span class="nav-text">BEM 的命名規則</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -226,7 +231,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200608/1227210383">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200523/2766055839/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -239,7 +244,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CSS 文字單位（px、em、rem…）
+          CSS 設計模式 - BEM
         </h1>
 
         <div class="post-meta">
@@ -249,7 +254,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-06-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-08T00:00:00+08:00">2020-06-08</time>
+              <time title="創建時間：2020-05-23 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-23T00:00:00+08:00">2020-05-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,27 +277,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>CSS 的文字單位分為<strong>絕對單位</strong>與<strong>相對單位</strong>。絕對單位是直接指定該元素的大小；相對單位則是會視裝置大小、根元素（html）或父元素的大小而定。</p>
-<h2 id="絕對單位"><a href="#絕對單位" class="headerlink" title="絕對單位"></a>絕對單位</h2><ul>
-<li><p><strong>px</strong>：螢幕顯示的單位（pixel），組成螢幕圖像的最小單位。是最常使用的單位，瀏覽器預設的字體大小為 16px。</p>
-</li>
-<li><p><strong>pt</strong>：很少使用的單位，也是印刷的單位（point），另一種是 iOS 所定義的 pt。</p>
-<a id="more"></a>
-<h2 id="相對單位"><a href="#相對單位" class="headerlink" title="相對單位"></a>相對單位</h2></li>
-<li><p><strong>em</strong>：相對父元素的單位，使用在 em 的數值為<strong>父元素大小的倍數</strong>。若父元素為 30px，<code>0.8em = 30px * 0.8 = 24px</code>。</p>
-</li>
-<li><p><strong>rem</strong>：相對 HTML 的單位，使用在 rem 的數值為 <strong>HTML 大小的倍數</strong>（預設為 16px）。若 HTML 為預設值 16px，<code>0.8rem = 16px * 0.8  = 12.8px</code>。</p>
-</li>
-<li><p><strong>%</strong>：與 em 類似，相對父元素的單位，當子元素使用百分比做為單位時，大小為<strong>父元素的百分比</strong>。若父元素為 30px，<code>80% = 30px * 0.8 = 24px</code>。</p>
-</li>
-</ul>
+        <p><em>BEM (Block Element Modifier)</em> 是由 <em>Yandex</em> 所提出的 CSS 設計模式，一種 CSS class 命名方式，如名稱所示，命名是由「區塊、元素、修飾符」所組成。</p>
 <blockquote>
-<p><strong>參考資料</strong>：</p>
-<ul>
-<li><em><a href="https://www.oxxostudio.tw/articles/201809/css-font-size.html" target="_blank" rel="noopener">一次搞懂 CSS 字體單位：px、em、rem 和 %</a></em></li>
-<li><em><a href="https://wcc723.github.io/design/2018/10/27/fonts-family/" target="_blank" rel="noopener">鐵人賽：網頁設計 - 文字大小、行高與空間上的關係</a></em></li>
-</ul>
+<p><em><a href="https://en.bem.info/" target="_blank" rel="noopener">BEM 文件</a></em></p>
 </blockquote>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><p><strong>Block</strong> 是頁面上每一個獨立的元件，以<strong>區塊功能來命名 class，不以區塊外觀命名</strong>。</p>
+<ul>
+<li>block 可獨立在頁面上任何地方，因此每個 block 都不應被位置限制住，不要在 block 寫 <code>margin</code>、<code>position</code> 等影響外部環境樣式。</li>
+<li>使用 BEM 設計模式時不應使用標籤、ID 選擇器。</li>
+<li>可以和其他 block 巢狀包覆。</li>
+</ul>
+<p><img src="https://images.bloggi.co/ecf81943.png" alt=""></p>
+<a id="more"></a>
+<h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><p><strong>Element</strong> 是 block 的一部份，block 後加上兩個下底線 <code>__</code> 與 element 區隔，且不能單獨使用，和 block 皆以功能命名。</p>
+<ul>
+<li>可以和其他 element 巢狀包覆。</li>
+<li>每個 element 都是 block 的一部份，不能單獨使用，因此元素之間<strong>不能有階層關係</strong>，如：<del><code>block__elem1__elem2</code></del>。</li>
+</ul>
+<p><img src="https://images.bloggi.co/05b63f23.png" alt=""></p>
+<h2 id="Modifier"><a href="#Modifier" class="headerlink" title="Modifier"></a>Modifier</h2><p><strong>Modifier</strong> 是描述 block 和 element 的狀態或外觀，原始的 BEM 是使用一個下底線 <code>_</code> 與 block 和 element 區隔。</p>
+<blockquote>
+<p>在後來 <em>Nicolas Gallagher</em> 提出的版本中，modifier 是使用兩條連字號 <code>--</code> 連接 block 和 element。</p>
+</blockquote>
+<blockquote>
+<p><em><a href="https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank" rel="noopener">MindBEMding – getting your head ’round BEM syntax</a></em></p>
+</blockquote>
+<p><img src="https://images.bloggi.co/36ca1e28.png" alt=""></p>
+<h2 id="BEM-的命名規則"><a href="#BEM-的命名規則" class="headerlink" title="BEM 的命名規則"></a>BEM 的命名規則</h2><ul>
+<li>名字皆以小寫字母組成。</li>
+<li>單字之間以連字號 <code>-</code> 連接。</li>
+<li>block 的名稱為其 element、modifier 建立命名空間，與其他 block 相同名稱的 element、modifier 互不相影響。</li>
+<li>block 與 element 之間以兩個下底線 <code>__</code> 連接。</li>
+<li>block、element 與 modifier 以一個下底線 <code>_</code> 連接。</li>
+<li>modifier 與 modifier  之間以一個下底線 <code>_</code> 連接。</li>
+<li>布林修飾符的值與名稱不相關。</li>
+</ul>
 
     </div>
 
@@ -302,7 +321,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/font/" rel="tag"># font</a>
+              <a href="/tags/bem/" rel="tag"># bem</a>
+              <a href="/tags/css/" rel="tag"># css</a>
           </div>
 
         
@@ -311,12 +331,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/20200528/3863821502" rel="prev" title="CSS 設計模式 - OOCSS">
-      <i class="fa fa-chevron-left"></i> CSS 設計模式 - OOCSS
+    <a href="/posts/20200214/3326142502/" rel="prev" title="git reset 還原到之前的版本">
+      <i class="fa fa-chevron-left"></i> git reset 還原到之前的版本
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/20200901/1596804957" rel="next" title="Vue.js Slot">
-      Vue.js Slot <i class="fa fa-chevron-right"></i>
+    <a href="/posts/20200527/3030697487/" rel="next" title="CSS 設計模式 - SMACSS">
+      CSS 設計模式 - SMACSS <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

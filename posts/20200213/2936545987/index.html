@@ -22,21 +22,20 @@
     var CONFIG = {"hostname":"ouiis.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="如何將一段字串的順序倒轉？例如： hello &#x3D;&gt; olleh，除了字串方法也會使用到陣列方法 reverse() 和 join()。 1str.split(&#39;&#39;).reverse().join(&#39;&#39;);   將字串轉成陣列 倒轉陣列 最後將陣列轉回字串">
+  <meta name="description" content="Git 是一個「分散式版本控制軟體」，簡單說就是用於版本控制的工具，透過 Git 將每次的修改儲存成一個版本，如此可以方便了解各版本之間的差異。 Git 安裝與設定安裝 前往 Git 官網 找到下載 Git 按鈕進行下載。 下載成功後跟著步驟即可完成安裝。 安裝完成後在終端機輸入 $ git version 查看版本資訊。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 處理字串的方法">
-<meta property="og:url" content="https://ouiis.github.io/posts/20201029/1174075309">
+<meta property="og:title" content="Git 基礎操作">
+<meta property="og:url" content="https://ouiis.github.io/posts/20200213/2936545987/index.html">
 <meta property="og:site_name" content="前端의刃 | J&#39;s Notes">
-<meta property="og:description" content="如何將一段字串的順序倒轉？例如： hello &#x3D;&gt; olleh，除了字串方法也會使用到陣列方法 reverse() 和 join()。 1str.split(&#39;&#39;).reverse().join(&#39;&#39;);   將字串轉成陣列 倒轉陣列 最後將陣列轉回字串">
+<meta property="og:description" content="Git 是一個「分散式版本控制軟體」，簡單說就是用於版本控制的工具，透過 Git 將每次的修改儲存成一個版本，如此可以方便了解各版本之間的差異。 Git 安裝與設定安裝 前往 Git 官網 找到下載 Git 按鈕進行下載。 下載成功後跟著步驟即可完成安裝。 安裝完成後在終端機輸入 $ git version 查看版本資訊。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-10-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-03T07:33:13.011Z">
+<meta property="article:published_time" content="2020-02-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-03T07:33:13.008Z">
 <meta property="article:author" content="ouiis">
-<meta property="article:tag" content="javascript">
-<meta property="article:tag" content="string">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ouiis.github.io/posts/20201029/1174075309">
+<link rel="canonical" href="https://ouiis.github.io/posts/20200213/2936545987/">
 
 
 <script class="page-configurations">
@@ -49,7 +48,7 @@
   };
 </script>
 
-  <title>JavaScript 處理字串的方法 | 前端의刃 | J's Notes</title>
+  <title>Git 基礎操作 | 前端의刃 | J's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KJHHEXHV"></script>
     <script>
@@ -161,7 +160,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#陣列方法"><span class="nav-number">1.</span> <span class="nav-text">陣列方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse"><span class="nav-number">1.1.</span> <span class="nav-text">reverse()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join"><span class="nav-number">1.2.</span> <span class="nav-text">join()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字串方法"><span class="nav-number">2.</span> <span class="nav-text">字串方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#split"><span class="nav-number">2.1.</span> <span class="nav-text">split()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt"><span class="nav-number">2.2.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-、lastIndexOf"><span class="nav-number">2.3.</span> <span class="nav-text">indexOf()、lastIndexOf()</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-安裝與設定"><span class="nav-number">1.</span> <span class="nav-text">Git 安裝與設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">1.1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定識別資料"><span class="nav-number">1.2.</span> <span class="nav-text">設定識別資料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#終端機基本指令"><span class="nav-number">2.</span> <span class="nav-text">終端機基本指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在工作目錄新增本地數據庫"><span class="nav-number">3.</span> <span class="nav-text">在工作目錄新增本地數據庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#將檔案新增至索引"><span class="nav-number">4.</span> <span class="nav-text">將檔案新增至索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#將索引提交至數據庫"><span class="nav-number">5.</span> <span class="nav-text">將索引提交至數據庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查詢檔案狀態"><span class="nav-number">6.</span> <span class="nav-text">查詢檔案狀態</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查詢歷史紀錄"><span class="nav-number">7.</span> <span class="nav-text">查詢歷史紀錄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#關於-HEAD"><span class="nav-number">8.</span> <span class="nav-text">關於 HEAD</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -227,7 +226,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201029/1174075309">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200213/2936545987/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -240,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript 處理字串的方法
+          Git 基礎操作
         </h1>
 
         <div class="post-meta">
@@ -250,7 +249,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-10-29 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-29T00:00:00+08:00">2020-10-29</time>
+              <time title="創建時間：2020-02-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-13T00:00:00+08:00">2020-02-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +257,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
@@ -273,53 +272,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>如何將一段字串的順序倒轉？例如： <code>hello</code> =&gt; <code>olleh</code>，除了字串方法也會使用到陣列方法 <code>reverse()</code> 和 <code>join()</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>將字串轉成陣列</li>
-<li>倒轉陣列</li>
-<li>最後將陣列轉回字串</li>
+        <p>Git 是一個「分散式版本控制軟體」，簡單說就是用於版本控制的工具，透過 Git 將每次的修改儲存成一個版本，如此可以方便了解各版本之間的差異。</p>
+<h2 id="Git-安裝與設定"><a href="#Git-安裝與設定" class="headerlink" title="Git 安裝與設定"></a>Git 安裝與設定</h2><h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><ol>
+<li>前往 <a href="https://git-scm.com/" target="_blank" rel="noopener">Git 官網</a> 找到下載 Git 按鈕進行下載。</li>
+<li>下載成功後跟著步驟即可完成安裝。</li>
+<li>安裝完成後在終端機輸入 <code>$ git version</code> 查看版本資訊。<a id="more"></a>
+<h3 id="設定識別資料"><a href="#設定識別資料" class="headerlink" title="設定識別資料"></a>設定識別資料</h3></li>
 </ol>
-<a id="more"></a>
+<p>Git 在每次版本發佈時都會紀錄哪位開發者發佈，因此需設定好自己的識別資料。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;名字&quot;</span><br><span class="line">$ git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="陣列方法"><a href="#陣列方法" class="headerlink" title="陣列方法"></a>陣列方法</h2><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><ul>
-<li>反轉陣列元素的順序，回傳反轉後的陣列。</li>
-<li>在原陣列（<em>in place</em>）進行反轉，不會建立新的陣列。</li>
+<p>設定完成後，輸入 <code>$ git config --list</code> 查看設定檔，在設定檔直接輸入 <code>q</code> 則可退出查看。</p>
+<h2 id="終端機基本指令"><a href="#終端機基本指令" class="headerlink" title="終端機基本指令"></a>終端機基本指令</h2><ul>
+<li><code>$ cd 路徑</code> 前往指定路徑</li>
+<li><code>$ cd ..</code> 前往目前路徑的上一層</li>
+<li><code>$ ls</code> 展開目錄</li>
+<li><code>$ mkdir &lt;資料夾名稱&gt;</code> 新增資料夾</li>
+<li><code>$ touch &lt;檔案名稱&gt;</code> 新增檔案</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.reverse().join(); <span class="comment">// =&gt; '3, 2, 1'，但 a 已被修改為 [3, 2, 1]</span></span><br></pre></td></tr></table></figure>
+<h2 id="在工作目錄新增本地數據庫"><a href="#在工作目錄新增本地數據庫" class="headerlink" title="在工作目錄新增本地數據庫"></a>在工作目錄新增本地數據庫</h2><p><code>$ git init</code></p>
+<p>透過終端機進入要進行版本控制的資料夾，輸入 <code>$ git init</code>，這個指令會在資料夾根目錄產生一個 <code>.git</code> 的隱藏資料夾，所有版控項目都會利用這個資料夾監控。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd 資料夾路徑</span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
 
-<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><ul>
-<li>將陣列的所有元素轉成字串並串接起來，回傳字串結果。</li>
-<li>可以指定額外的字串用以分隔結果中的元素，預設使用逗號（<em>comma</em>）。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.join(); <span class="comment">// '1, 2, 3'</span></span><br><span class="line">a.join(<span class="string">''</span>); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+<h2 id="將檔案新增至索引"><a href="#將檔案新增至索引" class="headerlink" title="將檔案新增至索引"></a>將檔案新增至索引</h2><p>輸入 <code>$ git add &lt;檔案名稱&gt;</code> 指令將檔案加入到索引，若不指定檔案直接輸入 <code>$ git add .</code> 可將全部的檔案加入到索引。</p>
+<h2 id="將索引提交至數據庫"><a href="#將索引提交至數據庫" class="headerlink" title="將索引提交至數據庫"></a>將索引提交至數據庫</h2><p>輸入 <code>$ git commit -m &quot;更新訊息&quot;</code> 就可以發佈一個新版本。</p>
+<h2 id="查詢檔案狀態"><a href="#查詢檔案狀態" class="headerlink" title="查詢檔案狀態"></a>查詢檔案狀態</h2><p>輸入 <code>$ git status</code> 可查看目前工作目錄的狀態。</p>
+<h2 id="查詢歷史紀錄"><a href="#查詢歷史紀錄" class="headerlink" title="查詢歷史紀錄"></a>查詢歷史紀錄</h2><p>輸入 <code>$ git log</code> 可查看已發佈的版本紀錄，直接輸入 <code>q</code> 則可退出查看，歷史紀錄會以反向時間排序，最新的提交紀錄會最先被列出來。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 預設</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># 將每一筆提交顯示成單獨一行</span><br><span class="line">$ git log --pretty&#x3D;oneline</span><br><span class="line">$ git log --oneline</span><br></pre></td></tr></table></figure>
 
-<h2 id="字串方法"><a href="#字串方法" class="headerlink" title="字串方法"></a>字串方法</h2><h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3><ul>
-<li>將一個字串分割為由字串組成的陣列，以指定的界定字串（<em>delimiter string</em>）或正規運算式為分隔進行切割。</li>
-<li>可以帶入第二個參數限制字數。</li>
-</ul>
-<p>沒有指定界定字串：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'I am the best.'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> strA = str.split();</span><br><span class="line"><span class="built_in">console</span>.log(strA);</span><br><span class="line"><span class="comment">// ['I am the best.']</span></span><br></pre></td></tr></table></figure>
-
-<p>空字串：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strB = str.split(<span class="string">''</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strB);</span><br><span class="line"><span class="comment">//  ["I", " ", "a", "m", " ", "t", "h", "e", " ", "b", "e", "s", "t", "."]</span></span><br></pre></td></tr></table></figure>
-
-<p>空格字串：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> strC = str.split(<span class="string">' '</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strC);</span><br><span class="line"><span class="comment">// ["I", "am", "the", "best."]</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">String.prototype.split() - MDN web docs</a></em></p>
-</blockquote>
-<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p>參數帶入<strong>索引（index）</strong>，可以從字串擷取出指定位置上的字元。</p>
-<h3 id="indexOf-、lastIndexOf"><a href="#indexOf-、lastIndexOf" class="headerlink" title="indexOf()、lastIndexOf()"></a>indexOf()、lastIndexOf()</h3><ul>
-<li>在字串中搜尋指定的字元或子字串，<code>lastIndexOf()</code> 方法是反向搜尋。</li>
-<li>陣列也有相同的方法，根據指定的值搜尋元素。</li>
-</ul>
+<h2 id="關於-HEAD"><a href="#關於-HEAD" class="headerlink" title="關於 HEAD"></a>關於 HEAD</h2><p><code>HEAD</code> 是目前所在位置的指標，指向「目前所在的分支」或是「目前所在的 commit 版本」。<strong>預設情況下</strong>，<code>master</code> 是預設分支名稱，串連數個 commit 紀錄，<code>HEAD</code> 會跟著 <code>master</code> 前進，</p>
 <blockquote>
 <p><strong>參考資料</strong>：</p>
 <ul>
-<li><em><a href="https://youtu.be/3vvxRpyp0CE" target="_blank" rel="noopener">Leetcode 演算超入門</a></em></li>
+<li><em><a href="https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%AA%A2%E8%A6%96%E6%8F%90%E4%BA%A4%E7%9A%84%E6%AD%B7%E5%8F%B2%E8%A8%98%E9%8C%84" target="_blank" rel="noopener">Git 基礎 - 檢視提交的歷史記錄</a></em></li>
+<li><em><a href="https://gitbook.tw/chapters/using-git/log.html" target="_blank" rel="noopener">檢視紀錄 - 為你自己學 Git</a></em></li>
 </ul>
 </blockquote>
 
@@ -331,8 +317,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/javascript/" rel="tag"># javascript</a>
-              <a href="/tags/string/" rel="tag"># string</a>
+              <a href="/tags/git/" rel="tag"># git</a>
           </div>
 
         
@@ -341,12 +326,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/20200901/1596804957" rel="prev" title="Vue.js Slot">
-      <i class="fa fa-chevron-left"></i> Vue.js Slot
+    <a href="/posts/20200207/1695135584/" rel="prev" title="HTML5 語意標籤">
+      <i class="fa fa-chevron-left"></i> HTML5 語意標籤
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/20201030/3044455908" rel="next" title="JavaScript 處理數字的方法">
-      JavaScript 處理數字的方法 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/20200214/3326142502/" rel="next" title="git reset 還原到之前的版本">
+      git reset 還原到之前的版本 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
