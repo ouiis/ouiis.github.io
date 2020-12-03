@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -178,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -219,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/11/06/JavaScript-Map/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201117/90248468">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -233,7 +233,242 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/06/JavaScript-Map/" class="post-title-link" itemprop="url">認識 JavaScript 的 Map</a>
+            <a href="/posts/20201117/90248468" class="post-title-link" itemprop="url">JavaScript 處理字串的方法（三）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-17 16:23:15" itemprop="dateCreated datePublished" datetime="2020-11-17T16:23:15+08:00">2020-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h2><p>從一段字串中再擷取出子字串，可傳入的參數有兩個：</p>
+<ol>
+<li>第一個是子字串的<strong>起始位置</strong>，若為負值，則會從字串尾端開始算。</li>
+<li>第二個是字串的<strong>字元數目</strong>，可省略。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string.substr(start, length);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201117/1972913936">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端의刃 | J's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/20201117/1972913936" class="post-title-link" itemprop="url">JavaScript 日期與時間 - Date 物件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-17 13:25:06" itemprop="dateCreated datePublished" datetime="2020-11-17T13:25:06+08:00">2020-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在 JavaScript 可以透過 <code>new Date()</code> 獲得時間的物件，Date 物件是基於世界標準時間（UTC）1970/1/1 起的毫秒數值來儲存時間。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// // Wed Nov 01 2020 00:00:00 GMT+0800 (台北標準時間)</span></span><br></pre></td></tr></table></figure>
+
+<p>可透過傳入參數，獲得指定時間（本地時間）的物件：</p>
+<ul>
+<li><code>value</code>：以<strong>毫秒</strong>為單位的時間戳記。</li>
+<li><code>dateString</code>：日期時間的字串，這個字串必須能被 <code>Date.parse()</code> 解析。</li>
+<li>月份值是從 <em>0</em> 開始，若傳入的參數超過它的合理範圍，相鄰的參數值會被調整。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(value);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(dateString);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.now(); <span class="comment">// 獲得以毫秒為單位的時間戳記</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="取得日期："><a href="#取得日期：" class="headerlink" title="取得日期："></a>取得日期：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getFullYear() <span class="comment">// 年</span></span><br><span class="line">getMonth() <span class="comment">// 月</span></span><br><span class="line">getDate() <span class="comment">// 日</span></span><br><span class="line">getDay() <span class="comment">// 星期</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="設定日期："><a href="#設定日期：" class="headerlink" title="設定日期："></a>設定日期：</h2><p><code>setDate</code> 會回傳時間戳記，並改變原本的 Date 物件的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> currentDate = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// 今天的 Date 物件</span></span><br><span class="line"><span class="keyword">const</span> date = currentDate.getDate(); <span class="comment">// 今天的日期</span></span><br><span class="line"><span class="keyword">const</span> changeDays = <span class="number">20</span>; <span class="comment">// 往前或往後的天數</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> timestamp = currentDate.setDate(date + changeDays);</span><br><span class="line"><span class="comment">// 今天的日期 +20 天的時間戳記</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(timestamp));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>資料來源</strong>：</p>
+<ul>
+<li><em><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" rel="noopener">Date JavaScript | MDN</a></em></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201113/1757833723">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端의刃 | J's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/20201113/1757833723" class="post-title-link" itemprop="url">在 Vue.js 專案中使用 vue-chartjs 繪製圖表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-13T00:00:00+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Chart.js 是一套可透過 JavaScript 繪製圖表的工具，本篇將紀錄在 Vue.js 專案中使用 Chart.js 的實作過程。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/20201113/1757833723">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201106/2327233944">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ouiis">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端의刃 | J's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/20201106/2327233944" class="post-title-link" itemprop="url">認識 JavaScript 的 Map</a>
         </h2>
 
         <div class="post-meta">
@@ -269,7 +504,7 @@
           <p>JavaScript 除了在陣列有個 <code>map()</code> 方法，還有另外一個跟物件很像的 <code>Map</code>，和物件同樣是由 <code>Key/Value</code> 組成。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/06/JavaScript-Map/#more" rel="contents">
+              <a class="btn" href="/posts/20201106/2327233944#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -293,7 +528,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/11/02/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201102/1216329286">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -307,7 +542,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/02/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">JavaScript 處理字串的方法（二）</a>
+            <a href="/posts/20201102/1216329286" class="post-title-link" itemprop="url">JavaScript 處理字串的方法（二）</a>
         </h2>
 
         <div class="post-meta">
@@ -343,7 +578,7 @@
           <p>要將一段字串中的大寫轉換成小寫時，可以使用字串方法 <code>toLowerCase()</code>，這篇將紀錄不使用 JavaScript 內建的方法，要如何實作相同的結果。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/02/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/#more" rel="contents">
+              <a class="btn" href="/posts/20201102/1216329286#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -367,7 +602,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201030/3044455908">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -381,7 +616,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">JavaScript 處理數字的方法</a>
+            <a href="/posts/20201030/3044455908" class="post-title-link" itemprop="url">JavaScript 處理數字的方法</a>
         </h2>
 
         <div class="post-meta">
@@ -419,7 +654,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &gt; 0, |x| &#x3D; x</span><br><span class="line">x &#x3D; 0, |x| &#x3D; 0</span><br><span class="line">x &lt; 0, |x| &#x3D; -x</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/10/30/JavaScript-%E8%99%95%E7%90%86%E6%95%B8%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/posts/20201030/3044455908#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -443,7 +678,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20201029/1174075309">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -457,7 +692,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">JavaScript 處理字串的方法</a>
+            <a href="/posts/20201029/1174075309" class="post-title-link" itemprop="url">JavaScript 處理字串的方法</a>
         </h2>
 
         <div class="post-meta">
@@ -500,7 +735,7 @@
 </ol>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/10/29/JavaScript-%E8%99%95%E7%90%86%E5%AD%97%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/posts/20201029/1174075309#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -524,7 +759,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/09/01/Vue-js-Slot/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200901/1596804957">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -538,7 +773,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/Vue-js-Slot/" class="post-title-link" itemprop="url">Vue.js Slot</a>
+            <a href="/posts/20200901/1596804957" class="post-title-link" itemprop="url">Vue.js Slot</a>
         </h2>
 
         <div class="post-meta">
@@ -578,7 +813,7 @@
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/09/01/Vue-js-Slot/#more" rel="contents">
+              <a class="btn" href="/posts/20200901/1596804957#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -602,7 +837,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200608/1227210383">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -616,7 +851,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/" class="post-title-link" itemprop="url">CSS 文字單位（px、em、rem…）</a>
+            <a href="/posts/20200608/1227210383" class="post-title-link" itemprop="url">CSS 文字單位（px、em、rem…）</a>
         </h2>
 
         <div class="post-meta">
@@ -656,7 +891,7 @@
 <li><p><strong>pt</strong>：很少使用的單位，也是印刷的單位（point），另一種是 iOS 所定義的 pt。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/08/CSS%20%E6%96%87%E5%AD%97%E5%96%AE%E4%BD%8D%EF%BC%88px%E3%80%81em%E3%80%81rem%E2%80%A6%EF%BC%89/#more" rel="contents">
+              <a class="btn" href="/posts/20200608/1227210383#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -680,7 +915,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/">
+    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/posts/20200528/3863821502">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -694,7 +929,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/" class="post-title-link" itemprop="url">CSS 設計模式 - OOCSS</a>
+            <a href="/posts/20200528/3863821502" class="post-title-link" itemprop="url">CSS 設計模式 - OOCSS</a>
         </h2>
 
         <div class="post-meta">
@@ -728,279 +963,9 @@
 
       
           <p><em>OOCSS</em> 是 <em>Object Oriented CSS</em> 的縮寫，由 <em>Nicole Sullivan</em> 所提出的 CSS 設計模式，而這裡指的物件是可以在網站上重複使用的 CSS 樣式。</p>
-<p><em>OOCSS</em> 有兩個大原則：</p>
-<ol>
-<li>Separate Structure and Skin（結構與樣式的分離）</li>
-<li>Separate Container and Content（容器與內容的分離）</li>
-</ol>
-<h2 id="結構與樣式的分離"><a href="#結構與樣式的分離" class="headerlink" title="結構與樣式的分離"></a>結構與樣式的分離</h2><p><strong>結構</strong>指的是無法直接用肉眼看出來的部分，例如元素被指定的大小和位置。</p>
-<ul>
-<li>Height</li>
-<li>Width</li>
-<li>Margins</li>
-<li>Padding</li>
-<li>Overflow</li>
-</ul>
-<p><strong>樣式</strong>指的是元素可見的部分，例如：</p>
-<ul>
-<li>Colors</li>
-<li>Fonts</li>
-<li>Shadows</li>
-<li>Gradients
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/28/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-OOCSS/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ouiis">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端의刃 | J's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/" class="post-title-link" itemprop="url">CSS 設計模式 - SMACSS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">2020-05-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在小型專案裡，由於架構並不複雜，在管理上較不容易出現問題，但隨著專案的規模的成長，或者團隊人數的增加，如何讓程式碼的架構一目瞭然，方便自己或其他開發者維護專案，成為一個必須思考的課題。</p>
-<p><em>SMACSS</em> 是 <em>Scalable and Modular Architecture for CSS</em> 的縮寫，由 <em>Jonathan Snook</em> 提出的 CSS 設計方法，目的在於使 CSS 的結構具有<strong>延展性</strong>以及<strong>模組化</strong>。</p>
-<blockquote>
-<p><a href="http://smacss.com" target="_blank" rel="noopener">SMACSS 文件</a></p>
-</blockquote>
-<h2 id="分類-CSS"><a href="#分類-CSS" class="headerlink" title="分類 CSS"></a>分類 CSS</h2><p>將 CSS 分門別類是 <em>SMACSS</em> 的核心重點，共有以下五種類別：</p>
-<ol>
-<li>Base</li>
-<li>Layout</li>
-<li>Module</li>
-<li>State</li>
-<li>Theme
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/27/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-SMACSS/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ouiis">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端의刃 | J's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/" class="post-title-link" itemprop="url">CSS 設計模式 - BEM</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-05-23 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-23T00:00:00+08:00">2020-05-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>BEM (Block Element Modifier)</em> 是由 <em>Yandex</em> 所提出的 CSS 設計模式，一種 CSS class 命名方式，如名稱所示，命名是由「區塊、元素、修飾符」所組成。</p>
-<blockquote>
-<p><a href="https://en.bem.info/" target="_blank" rel="noopener">BEM 文件</a></p>
-</blockquote>
-<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><p><strong>Block</strong> 是頁面上每一個獨立的元件，以<strong>區塊功能來命名 class，不以區塊外觀命名</strong>。</p>
-<ul>
-<li>block 可獨立在頁面上任何地方，因此每個 block 都不應被位置限制住，不要在 block 寫 <code>margin</code>、<code>position</code> 等影響外部環境樣式。</li>
-<li>使用 BEM 設計模式時不應使用標籤、ID 選擇器。</li>
-<li>可以和其他 block 巢狀包覆。</li>
-</ul>
-<p><img src="https://images.bloggi.co/ecf81943.png" alt=""></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/23/CSS-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F-BEM/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ouiis.github.io/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ouiis">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端의刃 | J's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/" class="post-title-link" itemprop="url">git reset 還原到之前的版本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-14T00:00:00+08:00">2020-02-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>狀況：想將檔案還原到之前的 commit。</em></p>
-<p>回到前一次的 commit：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^</span><br><span class="line">$ git reset HEAD~</span><br></pre></td></tr></table></figure>
-
-<p>當 <code>HEAD</code> 與 <code>master</code> 都指向同一個 commit 時，可以寫成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset master^</span><br><span class="line">$ git reset master~</span><br></pre></td></tr></table></figure>
-
-<p>回到前三次的 commit：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^^^</span><br><span class="line">$ git reset HEAD^3</span><br><span class="line">$ git reset HEAD~3</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/14/git-reset-%E9%82%84%E5%8E%9F%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC/#more" rel="contents">
+              <a class="btn" href="/posts/20200528/3863821502#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
