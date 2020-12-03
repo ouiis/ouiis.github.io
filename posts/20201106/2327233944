@@ -32,8 +32,8 @@
 <meta property="article:published_time" content="2020-11-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-12-03T07:33:13.017Z">
 <meta property="article:author" content="ouiis">
-<meta property="article:tag" content="javascript">
 <meta property="article:tag" content="map">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://ouiis.github.io/posts/20201106/2327233944">
@@ -297,8 +297,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/javascript/" rel="tag"># javascript</a>
               <a href="/tags/map/" rel="tag"># map</a>
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
           </div>
 
         
